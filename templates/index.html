@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>{{name}}'s watchlist</title>
+    <link rel="icon" href="{{url_for('static', filename='favicon.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 <body>
-    <h2>{{name}}'s watchlist</h2>
+    <h2>
+        <img alt="cat" class="cat" src="{{url_for('static', filename='/images/cat.png')}}">
+        {{name}}'s watchlist</h2>
     <p>{{movies|length}} Titles</p>
-    <ul>
-        {%for movie in movies%}
+    <ul class="movie-list">
+        {% for movie in movies %}
         <li>{{movie.title}} - {{movie.year}}</li>
         {% endfor %}
     </ul>
+    <img alt="totoro" class="totoro" src="{{url_for('static', filename='/images/totoro.png')}}">
     <footer>
         <small>&copy; 2018 <a href="http://helloflask.com/book/3">HelloFlask</a></small>
     </footer>
