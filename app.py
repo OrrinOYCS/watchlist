@@ -61,10 +61,17 @@ def forge():
     db.session.commit()
     click.echo('job done.')
 
-    @app.cli.command()
-    @click.option('--drop', is_flag=True, help='create after drop')
-    def initdb(drop):
-        if drop:
-            db.drop_all()
-        db.create_all()
-        click.echo('initialized database')
+
+@app.cli.command()
+@click.option('--drop', is_flag=True, help='create after drop')
+def initdb(drop):
+    if drop:
+        db.drop_all()
+    db.create_all()
+    click.echo('initialized database')
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    user = User.query.first()
+    return render_template("404.html", user=user), 404

@@ -47,3 +47,8 @@ footer {
     margin: 0 auto;
     height: 100px;
 }
+
+/*goback*/
+.float-right{
+    Float: right;
+}
