@@ -9,11 +9,11 @@
 <body>
     <h2>
         <img alt="cat" class="cat" src="{{url_for('static', filename='/images/cat.png')}}">
-        {{name}}'s watchlist</h2>
-    <p>{{movies|length}} Titles</p>
+        {{user.name}}'s watchlist</h2>
+    <p>{{movie|length}} Titles</p>
     <ul class="movie-list">
-        {% for movie in movies %}
-        <li>{{movie.title}} - {{movie.year}}</li>
+        {% for m in movie %}
+        <li>{{m.title}} - {{m.year}}</li>
         {% endfor %}
     </ul>
     <img alt="totoro" class="totoro" src="{{url_for('static', filename='/images/totoro.png')}}">
