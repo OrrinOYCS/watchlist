@@ -36,7 +36,7 @@ class Movie(db.Model):
 def index():
     user = User.query.first()
     movie = Movie.query.all()
-    return render_template('index.html', user=user, movie=movie)
+    return render_template('index.html', movie=movie)
 
 
 @app.cli.command()
@@ -74,4 +74,10 @@ def initdb(drop):
 @app.errorhandler(404)
 def page_not_found(e):
     user = User.query.first()
-    return render_template("404.html", user=user), 404
+    return render_template("404.html"), 404
+
+
+@app.context_processor
+def return_user():
+    user = User.query.first()
+    return dict(user=user)
