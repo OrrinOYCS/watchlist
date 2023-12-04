@@ -1,0 +1,9 @@
+{%extends 'base.html'%}
+{%block content%}
+<h3>settings</h3>
+<form method="post">
+    Name:
+    <input type="text" name="username" autocomplete="off" required value="{{current_user.username}}">
+    <input type="submit" class="btn" name="submit" value="submit">
+</form>
+{%endblock%}
