@@ -19,5 +19,8 @@
 <h2>用werkzeug哈希管理密码，更新user的sql</h2>
 <h2>flask-login实现用户认证</h2>
 <h1>12.04</h1>
-<h2>页面保护：没有current_user.isauthenticated不被允许访问一些页面</h2>
-<h2>模板保护：没有current_user.isauthenticated不被允许访问页面中的一些按钮</h2>
+<h2>页面保护：没有current_user.is_authenticated不被允许访问一些页面</h2>
+<h2>模板保护：没有current_user.is_authenticated不被允许访问页面中的一些按钮</h2>
+<h2>添加更改用户名的settings页面</h2>
+<h2>增加login\logout页面</h2>
+<h2>完善页面认证保护逻辑</h2>
